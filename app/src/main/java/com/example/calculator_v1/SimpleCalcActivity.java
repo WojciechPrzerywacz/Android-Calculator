@@ -37,7 +37,10 @@ public class SimpleCalcActivity extends AppCompatActivity {
         String leftStr = oldStr.substring(0, cursorPos);
         String rightStr = oldStr.substring(cursorPos);
         //sprawdzanie wejścia
-        if(leftStr.endsWith("s") || leftStr.endsWith("i") || leftStr.endsWith("n") || rightStr.endsWith("s") || rightStr.startsWith("i") || rightStr.startsWith("n") || rightStr.startsWith(".") || leftStr.endsWith(".")){
+        if(leftStr.endsWith("s") || leftStr.endsWith("i") || leftStr.endsWith("n") || rightStr.endsWith("s") || rightStr.startsWith("i") || rightStr.startsWith("n")){
+            return;
+        }
+        if (strToAdd.equals(".") && (rightStr.startsWith(".") || leftStr.endsWith("."))){
             return;
         }
         //

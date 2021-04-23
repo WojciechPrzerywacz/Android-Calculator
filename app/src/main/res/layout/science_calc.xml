@@ -311,8 +311,8 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="lnBTN"
-                android:text="ln"
+                android:onClick="logBTN"
+                android:text="@string/ln"
                 android:textColor="#FF6600"
                 android:textSize="20sp" />
         </TableRow>

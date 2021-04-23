@@ -40,9 +40,13 @@ public class ScienceCalcActivity extends AppCompatActivity {
         String leftStr = oldStr.substring(0, cursorPos);
         String rightStr = oldStr.substring(cursorPos);
         //sprawdzanie wejścia
-        if(leftStr.endsWith("s") || leftStr.endsWith("i") || leftStr.endsWith("n") || rightStr.endsWith("s") || rightStr.startsWith("i") || rightStr.startsWith("n") || rightStr.startsWith(".") || leftStr.endsWith(".")){
+        if(leftStr.endsWith("g") ||leftStr.endsWith("o") || leftStr.endsWith("l") || leftStr.endsWith("s") || leftStr.endsWith("i") || leftStr.endsWith("n") || rightStr.startsWith("s") || rightStr.startsWith("i") || rightStr.startsWith("n") || rightStr.startsWith("o") || rightStr.startsWith("g")){
             return;
         }
+        if (strToAdd.equals(".") && (rightStr.startsWith(".") || leftStr.endsWith("."))){
+            return;
+        }
+
         if (getString(R.string.display).equals(display.getText().toString())){
             display.setText(strToAdd);
         }
@@ -62,7 +66,7 @@ public class ScienceCalcActivity extends AppCompatActivity {
         }
         if (strToAdd.equals("ln(")){
             cursorPos = display.getSelectionStart();
-            display.setSelection(cursorPos+2);
+            display.setSelection(cursorPos+1);
         }
     }
 
